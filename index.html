@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>바이브 코딩 가이드</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="바이브 코딩 가이드 목차">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">C</span>
+          <div>
+            <p class="eyebrow">비개발자를 위한</p>
+            <h1>바이브 코딩 가이드</h1>
+          </div>
+        </div>
+
+        <nav class="toc" aria-label="단계별 목차">
+          <section>
+            <h2>개발 기초</h2>
+            <a class="toc-item active" href="#step-1" aria-current="page">
+              <span>01</span>
+              <strong>도구 고르기</strong>
+            </a>
+            <a class="toc-item disabled" href="#step-2">
+              <span>02</span>
+              <strong>일단 HTML 만들어보기</strong>
+            </a>
+            <a class="toc-item disabled" href="#step-3">
+              <span>03</span>
+              <strong>Git으로 버전 관리 하기</strong>
+            </a>
+            <a class="toc-item disabled" href="#step-4">
+              <span>04</span>
+              <strong>Local Host로 서버 띄워보기</strong>
+            </a>
+            <a class="toc-item disabled" href="#step-5">
+              <span>05</span>
+              <strong>GitHub Pages로 배포해보기</strong>
+            </a>
+            <a class="toc-item disabled" href="#step-6">
+              <span>06</span>
+              <strong>Cloudflare로 배포해보기</strong>
+            </a>
+          </section>
+
+          <section>
+            <h2>Agent 일 시키기</h2>
+            <a class="toc-item disabled" href="#step-7">
+              <span>07</span>
+              <strong>Prompt 작성하기</strong>
+            </a>
+            <a class="toc-item disabled" href="#step-8">
+              <span>08</span>
+              <strong>Skills란 무엇인가?</strong>
+            </a>
+            <a class="toc-item disabled" href="#step-9">
+              <span>09</span>
+              <strong>MCP란 무엇인가?</strong>
+            </a>
+          </section>
+
+          <section>
+            <h2>뭘 해볼 수 있을까?</h2>
+            <a class="toc-item disabled" href="#step-10">
+              <span>10</span>
+              <strong>API 연결해보기</strong>
+            </a>
+          </section>
+        </nav>
+      </aside>
+
+      <main class="content" id="step-1">
+        <header class="page-header">
+          <p class="eyebrow">Step 01</p>
+          <h2>도구 고르기</h2>
+          <p>
+            비개발자라면 채팅으로 시작하고, 필요할 때 코드 편집기로 넘어가면 됩니다.
+          </p>
+        </header>
+
+        <section class="lesson-section">
+          <div class="section-heading">
+            <p class="eyebrow">1-1</p>
+            <h3>Gemini vs Codex vs Claude</h3>
+          </div>
+
+          <div class="notice">
+            모델 평가는 빠르게 바뀝니다. 아래 내용은 개인적인 의견입니다.
+          </div>
+
+          <div class="matrix" role="table" aria-label="AI 도구 비교표">
+            <div class="matrix-row matrix-head" role="row">
+              <div role="columnheader">도구</div>
+              <div role="columnheader">특징</div>
+            </div>
+            <div class="matrix-row" role="row">
+              <div role="cell"><strong>Gemini</strong></div>
+              <div role="cell">General한 능력이 좋음</div>
+            </div>
+            <div class="matrix-row" role="row">
+              <div role="cell"><strong>Codex</strong></div>
+              <div role="cell">괜찮은 코딩 능력</div>
+            </div>
+            <div class="matrix-row" role="row">
+              <div role="cell"><strong>Claude</strong></div>
+              <div role="cell">코딩에 뛰어나지만 Token 소모량이 비쌀 수 있음</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="lesson-section">
+          <div class="section-heading">
+            <p class="eyebrow">1-2</p>
+            <h3>개발 도구 형태 고르기</h3>
+          </div>
+
+          <div class="screen-grid">
+            <article class="screen-card">
+              <div class="fake-window app-window" aria-label="Desktop App 화면 예시">
+                <div class="window-bar">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="fake-app-layout">
+                  <aside></aside>
+                  <main>
+                    <div class="chat-line user">HTML 페이지를 만들어줘</div>
+                    <div class="chat-line agent">파일을 만들고 확인해볼게요.</div>
+                    <div class="composer">메시지를 입력하세요</div>
+                  </main>
+                </div>
+              </div>
+              <h4>Desktop App</h4>
+              <p>
+                코드를 거의 보지 않고 채팅으로 개발합니다.
+              </p>
+            </article>
+
+            <article class="screen-card">
+              <div class="fake-window ide-window" aria-label="IDE 화면 예시">
+                <div class="window-bar">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="fake-ide-layout">
+                  <aside>
+                    <b>index.html</b>
+                    <b>styles.css</b>
+                  </aside>
+                  <main>
+                    <code>&lt;h1&gt;Hello&lt;/h1&gt;</code>
+                    <code>body { color: #222; }</code>
+                    <code>button { padding: 8px; }</code>
+                  </main>
+                  <section>Codex Chat</section>
+                </div>
+              </div>
+              <h4>IDE</h4>
+              <p>
+                코드를 보며 함께 개발합니다.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="lesson-section">
+          <div class="section-heading">
+            <p class="eyebrow">1-3</p>
+            <h3>Codex Desktop App 설치하기</h3>
+          </div>
+
+          <div class="install-guide">
+            <article class="install-card">
+              <div class="install-shot store-shot" aria-label="Microsoft Store 설치 화면 예시">
+                <div class="shot-top">Microsoft Store</div>
+                <div class="store-panel">
+                  <div class="app-badge">C</div>
+                  <div>
+                    <strong>Codex</strong>
+                    <span>OpenAI</span>
+                  </div>
+                  <button>Get</button>
+                </div>
+              </div>
+              <div>
+                <p class="step-label">1</p>
+                <h4>앱 설치</h4>
+                <p>
+                  <a href="https://get.microsoft.com/installer/download/9PLM9XGG6VKS?cid=website_cta_psi">Microsoft Store</a>에서
+                  Codex를 설치합니다. PowerShell을 안다면
+                  <code>winget install Codex -s msstore</code>도 가능합니다.
+                </p>
+              </div>
+            </article>
+
+            <article class="install-card">
+              <div class="install-shot login-shot" aria-label="로그인 화면 예시">
+                <div class="shot-top">Codex</div>
+                <div class="center-panel">
+                  <div class="app-badge">C</div>
+                  <strong>Sign in to Codex</strong>
+                  <button>Continue with ChatGPT</button>
+                </div>
+              </div>
+              <div>
+                <p class="step-label">2</p>
+                <h4>로그인</h4>
+                <p>ChatGPT 계정으로 로그인합니다.</p>
+              </div>
+            </article>
+
+            <article class="install-card">
+              <div class="install-shot project-shot" aria-label="프로젝트 추가 화면 예시">
+                <div class="shot-top">Projects</div>
+                <div class="project-list">
+                  <button>+ Add new project</button>
+                  <span>No project selected</span>
+                </div>
+              </div>
+              <div>
+                <p class="step-label">3</p>
+                <h4>프로젝트 추가</h4>
+                <p>왼쪽 목록에서 새 프로젝트를 추가합니다.</p>
+              </div>
+            </article>
+
+            <article class="install-card">
+              <div class="install-shot folder-shot" aria-label="폴더 선택 화면 예시">
+                <div class="shot-top">Select Folder</div>
+                <div class="folder-list">
+                  <span>Desktop</span>
+                  <span>Documents</span>
+                  <strong>this-is-click</strong>
+                </div>
+              </div>
+              <div>
+                <p class="step-label">4</p>
+                <h4>폴더 선택</h4>
+                <p>앞으로 만들 파일이 들어갈 폴더를 선택합니다.</p>
+              </div>
+            </article>
+
+            <article class="install-card">
+              <div class="install-shot permission-shot" aria-label="권한 설정 화면 예시">
+                <div class="shot-top">Permissions</div>
+                <div class="permission-panel">
+                  <strong>Default permissions</strong>
+                  <span>Project folder only</span>
+                  <button>Start</button>
+                </div>
+              </div>
+              <div>
+                <p class="step-label">5</p>
+                <h4>권한 확인</h4>
+                <p>처음에는 기본 권한으로 시작합니다.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="practice-panel">
+          <div>
+            <p class="eyebrow">1-4</p>
+            <h3>첫 통신 확인</h3>
+          </div>
+          <blockquote>
+            안녕
+          </blockquote>
+          <p>
+            채팅창에 <strong>안녕</strong>이라고 입력해 답장이 오는지 먼저
+            확인합니다. 답장이 온다면 계정 로그인, 앱 실행, AI 통신이 정상인
+            상태입니다.
+          </p>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
